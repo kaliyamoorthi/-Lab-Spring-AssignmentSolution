@@ -1,4 +1,4 @@
-package com.greatlearning.event.studentregistration;
+package com.greatlearning.fest.studentregistration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
