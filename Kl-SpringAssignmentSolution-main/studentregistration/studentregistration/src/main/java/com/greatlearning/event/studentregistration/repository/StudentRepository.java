@@ -1,6 +1,6 @@
-package com.greatlearning.event.studentregistration.repository;
+package com.greatlearning.fest.studentreg.repository;
 
-import com.greatlearning.event.studentregistration.model.Student;
+import com.greatlearning.fest.studentreg.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
