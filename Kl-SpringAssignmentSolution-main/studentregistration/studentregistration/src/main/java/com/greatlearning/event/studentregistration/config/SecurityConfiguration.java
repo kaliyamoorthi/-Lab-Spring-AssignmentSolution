@@ -1,4 +1,4 @@
-package com.greatlearning.event.studentregistration.config;
+package com.greatlearning.fest.student.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -31,18 +31,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/event/registerStudent", "/event/showStudentform","/event/delete").hasAnyRole("ADMIN")
-                .antMatchers("/event","/event/list", "/event/updateForm", "/event/update").hasAnyRole("USER", "ADMIN")
+        http.authorizeRequests().antMatchers("/fest/Student", "/fest/showStudentform","/fest/delete").hasAnyRole("ADMIN")
+                .antMatchers("/fest","/event/list", "/fest/updateForm", "/fest/update").hasAnyRole("USER", "ADMIN")
                 .anyRequest().authenticated()
-                //.antMatchers("com.greatlearning.event/").permitAll()
+                //.antMatchers("com.greatlearning.fest/").permitAll()
                 .and()
                 .formLogin()
                 .loginProcessingUrl("/login")
-                //.successForwardUrl("/event/homepage").permitAll()
+                //.successForwardUrl("/fest/homepage").permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/login").permitAll()
                 .and()
-                .exceptionHandling().accessDeniedPage("/event/403")
+                .exceptionHandling().accessDeniedPage("/fest/403")
                 .and()
                 .cors().and().csrf().disable();
     }
