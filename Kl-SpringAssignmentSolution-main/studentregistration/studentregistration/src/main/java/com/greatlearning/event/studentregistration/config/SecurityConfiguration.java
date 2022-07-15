@@ -1,4 +1,4 @@
-package com.greatlearning.fest.student.config;
+package com.greatlearning.fest.Student.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
