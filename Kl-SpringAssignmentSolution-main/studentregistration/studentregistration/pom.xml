@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.greatlearning.fest</groupId>
-	<artifactId>student</artifactId>
+	<artifactId>studentreg</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>student</name>
+	<name>studentreg</name>
 	<description>Dynamic Spring Web Application with Security</description>
 	<properties>
 		<java.version>11</java.version>
