@@ -4,7 +4,7 @@
 <html>
 <head><%@ page isELIgnored="false" %>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Student Registration</title>
+    <title>Student Reg</title>
 
     <style>
         table, th, td {
@@ -44,12 +44,12 @@
       <c:forEach var="tempStudent" items="${students}">
 
        <!-- construct an "update" link with customer id -->
-       <c:url var="updateLink" value="/event/updateForm">
+       <c:url var="updateLink" value="/fest/updateForm">
         <c:param name="studentId" value="${tempStudent.id}" />
        </c:url>
 
        <!-- construct an "delete" link with customer id -->
-       <c:url var="deleteLink" value="/event/delete">
+       <c:url var="deleteLink" value="/fest/delete">
         <c:param name="studentId" value="${tempStudent.id}" />
        </c:url>
 
@@ -87,7 +87,7 @@
   <br>
 
 
-   <c:url var="homepage" value="/event/homePage"></c:url>
+   <c:url var="homepage" value="/fest/homePage"></c:url>
  <a href  = "${homepage}">Home Page</a>
 </body>
 </html>
