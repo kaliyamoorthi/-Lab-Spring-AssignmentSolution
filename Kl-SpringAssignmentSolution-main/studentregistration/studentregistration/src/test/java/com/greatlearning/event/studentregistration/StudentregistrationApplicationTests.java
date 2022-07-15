@@ -1,10 +1,10 @@
-package com.greatlearning.fest.studentregistration;
+package com.greatlearning.fest.student;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StudentregistrationApplicationTests {
+class StudentApplicationTests {
 
 	@Test
 	void contextLoads() {
