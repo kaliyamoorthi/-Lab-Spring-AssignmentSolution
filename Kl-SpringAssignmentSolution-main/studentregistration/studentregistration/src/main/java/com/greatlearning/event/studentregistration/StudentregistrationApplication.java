@@ -1,13 +1,13 @@
-package com.greatlearning.fest.Student;
+package com.greatlearning.fest.studentreg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudentApplication {
+public class StudentregApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudentApplication.class, args);
+		SpringApplication.run(StudentregApplication.class, args);
 	}
 
 }
