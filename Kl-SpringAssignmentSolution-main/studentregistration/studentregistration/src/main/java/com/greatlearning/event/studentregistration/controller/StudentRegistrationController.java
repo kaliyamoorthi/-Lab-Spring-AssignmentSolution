@@ -1,7 +1,7 @@
-package com.greatlearning.event.studentregistration.controller;
+package com.greatlearning.fest.Studentreg.controller;
 
-import com.greatlearning.event.studentregistration.model.Student;
-import com.greatlearning.event.studentregistration.service.StudentRegistrationService;
+import com.greatlearning.fest.studentreg.model.Student;
+import com.greatlearning.fest.studentreg.service.StudentRegService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -14,12 +14,12 @@ import java.security.Principal;
 import java.util.List;
 @Controller
 @Component
-@RequestMapping("/event")
-public class StudentRegistrationController {
+@RequestMapping("/fest")
+public class StudentRegController {
     @Autowired
-    private StudentRegistrationService registrationService;
-    public StudentRegistrationController(StudentRegistrationService registratonService){
-        this.registrationService = registratonService;
+    private StudentRegService regService;
+    public StudentRegController(StudentRegService regService){
+        this.regService = regService;
     }
 
     /****************/
@@ -34,15 +34,15 @@ public class StudentRegistrationController {
         System.out.println(theStudent.getId()+" "+theStudent.getFirstname()+
                 " "+theStudent.getLastname()+" " +theStudent.getCourse()+" " +
                 theStudent.getCountry());
-        registrationService.registerStudent(theStudent);
+        regService.registerStudent(theStudent);
         System.out.println("Student registered Successfully");
         //return new ModelAndView("empform","command",emp);
-        return new ModelAndView("redirect:/event/list");
+        return new ModelAndView("redirect:/fest/list");
     }
 
     @GetMapping("/list")
     public String getAllRegisteredStudents(Model theModel){
-        List<Student> theStudents = registrationService.getRegisteredStudents();
+        List<Student> theStudents = regService.getRegisteredStudents();
         theModel.addAttribute("students",theStudents);
         System.out.println("All registered students: \n"+theStudents.toString());
         return "list-students";
@@ -50,16 +50,16 @@ public class StudentRegistrationController {
     @RequestMapping(value="/delete")
     //@ResponseStatus(HttpStatus.NO_CONTENT)
     public ModelAndView deleteStudentById(@RequestParam("studentId") Long theId){
-        registrationService.deleteStudent(theId);
+        regService.deleteStudent(theId);
         Model theModel = new RedirectAttributesModelMap();
         System.out.println("The student with Id "+theId+" is deleted successfully");
-        return new ModelAndView("redirect:/event/list");
+        return new ModelAndView("redirect:/fest/list");
     }
 
 
     @RequestMapping(value="/updateForm")
     public String updateStudent(@RequestParam("studentId") Long theId, Model theModel) {
-        Student theStudent = registrationService.getStudentbyId(theId);
+        Student theStudent = regService.getStudentbyId(theId);
         System.out.println("The details of student with id "+theId+" are updated from ");
         System.out.println(theStudent.toString());
         theModel.addAttribute("command",theStudent);
@@ -67,9 +67,9 @@ public class StudentRegistrationController {
     }
     @RequestMapping(value="/update",method = RequestMethod.POST)
     public String editsave(@ModelAttribute("student") Student student){
-        registrationService.updateStudentDetails(student);
+        regService.updateStudentDetails(student);
         System.out.println("to :"+student.toString());
-        return ("redirect:/event/list");
+        return ("redirect:/fest/list");
     }
     @RequestMapping(value="/homePage")
     public String showHomePage() {
