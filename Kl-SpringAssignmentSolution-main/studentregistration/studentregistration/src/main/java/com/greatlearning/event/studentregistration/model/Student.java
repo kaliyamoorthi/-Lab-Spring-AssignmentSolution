@@ -1,4 +1,4 @@
-package com.greatlearning.event.studentregistration.model;
+package com.greatlearning.fest.studentreg.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
