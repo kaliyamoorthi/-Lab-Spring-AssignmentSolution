@@ -5,7 +5,7 @@
    </head>
 
    <body>
-      <h2 style="background-color:powderblue;">Student Registration</h2>
+      <h2 style="background-color:powderblue;">Student Reg</h2>
 
       <form:form method = "POST" action = "registerStudent" >
          <table>
