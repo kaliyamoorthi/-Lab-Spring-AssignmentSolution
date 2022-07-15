@@ -1,7 +1,7 @@
-package com.greatlearning.event.studentregistration.service;
+package com.greatlearning.fest.studentreg.service;
 
-import com.greatlearning.event.studentregistration.model.Student;
-import com.greatlearning.event.studentregistration.repository.StudentRepository;
+import com.greatlearning.fest.studentreg.model.Student;
+import com.greatlearning.fest.studentreg.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentRegistrationService {
+public class StudentRegService {
     @Autowired
     private StudentRepository studentRepository;
-    public StudentRegistrationService(StudentRepository studentRepository){
+    public StudentRegService(StudentRepository studentRepository){
         this.studentRepository = studentRepository;
     }
 
